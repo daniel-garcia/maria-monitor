@@ -1,0 +1,3434 @@
+        |Aborted_clients|
+
+  * *Description:* Number of aborted client connections. This can be due
+    to the client not calling mysql_close() before exiting, the client
+    sleeping without issuing a request to the server for more seconds
+    than specified by wait_timeout
+    </kb/en/server-system-variables/#wait_timeout> or
+    interactive_timeout
+    </kb/en/server-system-variables/#interactive_timeout>, or by the
+    client program ending in the midst of transferring data.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Aborted_connects|
+
+  * *Description:* Number of failed server connection attempts. This can
+    be due to a client using an incorrect password, a client not having
+    privileges to connect to a database, a connection packet not
+    containing the correct information, or if it takes more than
+    connect_timeout </kb/en/server-system-variables/#connect_timeout>
+    seconds to get a connect packet.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Access_denied_errors|
+
+  * *Description:* Number of access denied errors.
+  * *Scope:* Global
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.2 </kb/en/what-is-mariadb-52/>| 
+
+------------------------------------------------------------------------
+
+
+        |Binlog_bytes_written|
+
+  * *Description:* The number of bytes written to the binary log
+    </kb/en/binary-log/>.
+  * *Scope:* Global
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.3 </kb/en/what-is-mariadb-53/>| 
+
+------------------------------------------------------------------------
+
+
+        |Binlog_cache_disk_use|
+
+  * *Description:* Number of transactions which used a temporary disk
+    cache because they could not fit in the regular binary log
+    </kb/en/binary-log/> cache, being larger than binlog_cache_size
+    </kb/en/server-system-variables/#binlog_cache_size>.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Binlog_cache_use|
+
+  * *Description:* Number of transaction which used the regular binary
+    log </kb/en/binary-log/> cache, being smaller than binlog_cache_size
+    </kb/en/server-system-variables/#binlog_cache_size>.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Binlog_commits|
+
+  * *Description:* Total number of transactions committed to the binary
+    log.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.3 </kb/en/what-is-mariadb-53/>| 
+
+------------------------------------------------------------------------
+
+
+        |Binlog_group_commits|
+
+  * *Description:* Total number of group commits done to the binary log.
+    See Group commit for the binary log
+    </kb/en/group-commit-for-the-binary-log/>.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.3 </kb/en/what-is-mariadb-53/>| 
+
+------------------------------------------------------------------------
+
+
+        |Binlog_snapshot_files|
+
+  * *Description:* The binary log file. Unlike SHOW MASTER STATUS
+    </kb/en/show-master-status/>, can be queried in a transactionally
+    consistent way, irrespective of which other transactions have been
+    committed since the snapshot was taken. See Enhancements for START
+    TRANSACTION WITH CONSISTENT SNAPSHOT
+    </kb/en/enhancements-for-start-transaction-with-consistent-snapshot/>.
+  * *Scope:* Session
+  * *Data Type:* |string|
+  * *Introduced:* |MariaDB 5.3 </kb/en/what-is-mariadb-53/>| 
+
+------------------------------------------------------------------------
+
+
+        |Binlog_snapshot_position|
+
+  * *Description:* The binary log position. Unlike SHOW MASTER STATUS
+    </kb/en/show-master-status/>, can be queried in a transactionally
+    consistent way, irrespective of which other transactions have been
+    committed since the snapshot was taken. See Enhancements for START
+    TRANSACTION WITH CONSISTENT SNAPSHOT
+    </kb/en/enhancements-for-start-transaction-with-consistent-snapshot/>.
+  * *Scope:* Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.3 </kb/en/what-is-mariadb-53/>| 
+
+------------------------------------------------------------------------
+
+
+        |Binlog_stmt_cache_disk_use|
+
+  * *Description:* Number of non-transaction statements which used a
+    temporary disk cache because they could not fit in the regular
+    binary log </kb/en/binary-log/> cache, being larger than
+    binlog_stmt_cache_size
+    </kb/en/server-system-variables/#binlog_stmt_cache_size>.
+  * *Scope:* Global
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB/MySQL 5.5| 
+
+------------------------------------------------------------------------
+
+
+        |Binlog_stmt_cache_use|
+
+  * *Description:* Number of non-transaction statement which used the
+    regular binary log </kb/en/binary-log/> cache, being smaller than
+    binlog_stmt_cache_size
+    </kb/en/server-system-variables/#binlog_stmt_cache_size>.
+  * *Scope:* Global
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB/MySQL 5.5| 
+
+------------------------------------------------------------------------
+
+
+        |Busy_time|
+
+  * *Description:* Cumulative time in seconds of activity on connections.
+  * *Scope:* Global
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.3 </kb/en/what-is-mariadb-53/>| 
+
+------------------------------------------------------------------------
+
+
+        |Bytes_received|
+
+  * *Description:* Total bytes received from all clients.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Bytes_sent|
+
+  * *Description:* Total bytes sent to all clients.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_admin_commands|
+
+  * *Description:* Number of admin commands executed. These include
+    table dumps, change users, binary log dumps, shutdowns, pings and
+    debugs.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_alter_db|
+
+  * *Description:* Number of ALTER DATABASE </kb/en/alter-database/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_alter_db_upgrade|
+
+  * *Description:* Number of ALTER DATABASE ... UPGRADE
+    </kb/en/alter-database/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_alter_event|
+
+  * *Description:* Number of ALTER EVENT </kb/en/alter-event/> commands
+    executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_alter_function|
+
+  * *Description:* Number of ALTER FUNCTION </kb/en/alter-function/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_alter_procedure|
+
+  * *Description:* Number of ALTER PROCEDURE </kb/en/alter-procedure/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_alter_server|
+
+  * *Description:* Number of ALTER SERVER </kb/en/alter-server/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_alter_table|
+
+  * *Description:* Number of ALTER TABLE </kb/en/alter-table/> commands
+    executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_alter_tablespace|
+
+  * *Description:* Number of ALTER TABLESPACE </kb/en/alter-tablespace/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_analyze|
+
+  * *Description:* Number of ANALYZE </kb/en/analyze-table/> commands
+    executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_assign_to_keycache|
+
+  * *Description:* Number of assign to keycache commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_backup_table|
+
+  * *Description:* Removed in MariaDB 5.5 </kb/en/what-is-mariadb-55/>,
+    in older versions, Com_backup_table contains the number of BACKUP
+    TABLE </kb/en/backup-table-deprecated/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Removed:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Com_begin|
+
+  * *Description:* Number of BEGIN </kb/en/begin-end/> statements executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_binlog|
+
+  * *Description:* Number of BINLOG </kb/en/binlog/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_call_procedure|
+
+  * *Description:* Number of CALL </kb/en/call/> procedure_name
+    statements executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_change_db|
+
+  * *Description:* Number of USE </kb/en/use/> database_name commands
+    executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_check|
+
+  * *Description:* Number of CHECK TABLE </kb/en/check-table/> commands
+    executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_checksum|
+
+  * *Description:* Number of CHECKSUM TABLE </kb/en/checksum-table/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_commit|
+
+  * *Description:* Number of COMMIT
+    </kb/en/transactions-commit-statement/> commands executed. Differs
+    from Handler_commit <#handler_commit>, which counts internal commit
+    statements.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_create_db|
+
+  * *Description:* Number of CREATE DATABASE </kb/en/create-database/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_create_event|
+
+  * *Description:* Number of CREATE EVENT </kb/en/create-event/>
+    commands executed. Differs from Executed_events <#executed_events>
+    in that it is incremented when the CREATE EVENT is run, and not when
+    the event executes.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_create_function|
+
+  * *Description:* Number of CREATE FUNCTION </kb/en/create-function/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_create_index|
+
+  * *Description:* Number of CREATE INDEX </kb/en/create-index/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_create_procedure|
+
+  * *Description:* Number of CREATE PROCEDURE </kb/en/create-procedure/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_create_role|
+
+  * *Description:* Number of CREATE ROLE </kb/en/create-role/> commands
+    executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 10.0.5 </kb/en/mariadb-1005-release-notes/>| 
+
+------------------------------------------------------------------------
+
+
+        |Com_create_server|
+
+  * *Description:* Number of CREATE SERVER </kb/en/create-server/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_create_table|
+
+  * *Description:* Number of CREATE TABLE </kb/en/create-table/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_create_trigger|
+
+  * *Description:* Number of CREATE TRIGGER </kb/en/create-trigger/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_create_udf|
+
+  * *Description:* Number of CREATE UDF </kb/en/create-function-udf/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_create_user|
+
+  * *Description:* Number of CREATE USER </kb/en/create-user/> commands
+    executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_create_view|
+
+  * *Description:* Number of CREATE VIEW </kb/en/create-view/> commands
+    executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_dealloc_sql|
+
+  * *Description:* Number of DEALLOCATE
+    </kb/en/deallocate-drop-prepared-statement/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_delete|
+
+  * *Description:* Number of DELETE </kb/en/delete/> commands executed.
+    Differs from Handler_delete <#handler_delete>, which counts the
+    number of times rows have been deleted from tables.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_delete_multi|
+
+  * *Description:* Number of multi-table DELETE </kb/en/delete/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_do|
+
+  * *Description:* Number of DO </kb/en/do/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_drop_db|
+
+  * *Description:* Number of DROP DATABASE </kb/en/drop-database/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_drop_event|
+
+  * *Description:* Number of DROP EVENT </kb/en/drop-event/> commands
+    executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_drop_function|
+
+  * *Description:* Number of DROP FUNCTION </kb/en/drop-function/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_drop_index|
+
+  * *Description:* Number of DROP INDEX </kb/en/drop-index/> commands
+    executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_drop_procedure|
+
+  * *Description:* Number of DROP PROCEDURE </kb/en/drop-procedure/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_drop_role|
+
+  * *Description:* Number of DROP ROLE </kb/en/drop-role/> commands
+    executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 10.0.5 </kb/en/mariadb-1005-release-notes/>| 
+
+------------------------------------------------------------------------
+
+
+        |Com_drop_server|
+
+  * *Description:* Number of DROP SERVER </kb/en/drop-server/> commands
+    executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_drop_table|
+
+  * *Description:* Number of DROP TABLE </kb/en/drop-table/> commands
+    executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_drop_trigger|
+
+  * *Description:* Number of DROP TRIGGER </kb/en/drop-trigger/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_drop_user|
+
+  * *Description:* Number of DROP USER </kb/en/drop-user/> commands
+    executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_drop_view|
+
+  * *Description:* Number of DROP VIEW </kb/en/drop-view/> commands
+    executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_empty_query|
+
+  * *Description:* Number of queries to the server that do not produce
+    SQL queries. An SQL query simply returning no results does not
+    increment |Com_empty_query| - see Empty_queries <#empty_queries>
+    instead. An example of an empty query sent to the server is |mysql
+    --comments -e '-- sql comment'|
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_execute_sql|
+
+  * *Description:* Number of EXECUTE </kb/en/execute-statement/>
+    statements executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_flush|
+
+  * *Description:* Number of FLUSH </kb/en/flush/> commands executed.
+    This differs from Flush_commands <#flush_commands>, which also
+    counts internal server flush requests.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_get_diagnostics|
+
+  * *Description:* Number of GET DIAGNOSTICS </kb/en/get-diagnostics/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 10.0.4 </kb/en/mariadb-1004-release-notes/>|
+    / |MySQL 5.6.4| 
+
+------------------------------------------------------------------------
+
+
+        |Com_grant|
+
+  * *Description:* Number of GRANT </kb/en/grant/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_grant_role|
+
+  * *Description:* Number of GRANT </kb/en/grant/#roles> role commands
+    executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 10.0.5 </kb/en/mariadb-1005-release-notes/>| 
+
+------------------------------------------------------------------------
+
+
+        |Com_ha_close|
+
+  * *Description:* Number of HANDLER </kb/en/handler-commands/>
+    table_name CLOSE commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_ha_open|
+
+  * *Description:* Number of HANDLER </kb/en/handler-commands/>
+    table_name OPEN commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_ha_read|
+
+  * *Description:* Number of HANDLER </kb/en/handler-commands/>
+    table_name READ commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_help|
+
+  * *Description:* Number of HELP </kb/en/help-command/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_insert|
+
+  * *Description:* Number of INSERT </kb/en/insert/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_insert_select|
+
+  * *Description:* Number of INSERT ... SELECT </kb/en/insert-select/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_install_plugin|
+
+  * *Description:* Number of INSTALL PLUGIN </kb/en/install-plugin/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_kill|
+
+  * *Description:* Number of KILL </kb/en/kill/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_load|
+
+  * *Description:* Number of LOAD commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_load_master_data|
+
+  * *Description:*
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Removed:* MariaDB 5.5 </kb/en/what-is-mariadb-55/> 
+
+------------------------------------------------------------------------
+
+
+        |Com_load_master_table|
+
+  * *Description:*
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Removed:* MariaDB 5.5 </kb/en/what-is-mariadb-55/> 
+
+------------------------------------------------------------------------
+
+
+        |Com_lock_tables|
+
+  * *Description:* Number of [lock-tables|LOCK TABLES]] commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_optimize|
+
+  * *Description:* Number of OPTIMIZE </kb/en/optimize-table/> commands
+    executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_preload_keys|
+
+  * *Description:*
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_prepare_sql|
+
+  * *Description:* Number of PREPARE </kb/en/prepare-statement/>
+    statements executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_purge|
+
+  * *Description:* Number of PURGE </kb/en/sql-commands-purge-logs/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_purge_before_date|
+
+  * *Description:* Number of PURGE BEFORE
+    </kb/en/sql-commands-purge-logs/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_release_savepoint|
+
+  * *Description:* Number of RELEASE SAVEPOINT </kb/en/savepoint/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_rename_table|
+
+  * *Description:* Number of RENAME TABLE </kb/en/rename-table/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_rename_user|
+
+  * *Description:* Number of RENAME USER </kb/en/rename-user/> commands
+    executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_repair|
+
+  * *Description:* Number of REPAIR TABLE </kb/en/repair-table/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_replace|
+
+  * *Description:* Number of REPLACE </kb/en/replace/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_replace_select|
+
+  * *Description:* Number of REPLACE </kb/en/replace/> ... SELECT
+    </kb/en/select/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_reset|
+
+  * *Description:* Number of RESET </kb/en/reset/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_resignal|
+
+  * *Description:* Number of RESIGNAL </kb/en/resignal-statement/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* MariaDB 5.5 </kb/en/what-is-mariadb-55/> 
+
+------------------------------------------------------------------------
+
+
+        |Com_restore_table|
+
+  * *Description:*
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Removed:* MariaDB 5.5 </kb/en/what-is-mariadb-55/> 
+
+------------------------------------------------------------------------
+
+
+        |Com_revoke|
+
+  * *Description:* Number of REVOKE </kb/en/revoke/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_revoke_all|
+
+  * *Description:* Number of REVOKE ALL </kb/en/revoke/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_revoke_grant|
+
+  * *Description:* Number of REVOKE </kb/en/revoke/#roles> role commands
+    executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 10.0.5 </kb/en/mariadb-1005-release-notes/>| 
+
+------------------------------------------------------------------------
+
+
+        |Com_rollback|
+
+  * *Description:* Number of ROLLBACK </kb/en/rollback/> commands
+    executed. Differs from Handler_rollback <#handler_rollback>, which
+    is the number of transaction rollback requests given to a storage
+    engine.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_rollback_to_savepoint|
+
+  * *Description:* Number of ROLLBACK ... TO SAVEPOINT
+    </kb/en/rollback/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_savepoint|
+
+  * *Description:* Number of SAVEPOINT </kb/en/savepoint/> commands
+    executed. Differs from Handler_savepoint <#handler_savepoint>, which
+    is the number of transaction savepoint creation requests.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_select|
+
+  * *Description:* Number of SELECT </kb/en/select/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_set_option|
+
+  * *Description:* Number of SET OPTION </kb/en/set/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_signal|
+
+  * *Description:* Number of SIGNAL </kb/en/signal-statement/>
+    statements executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_authors|
+
+  * *Description:* Number of SHOW AUTHORS </kb/en/show-authors/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_binlog_events|
+
+  * *Description:* Number of SHOW BINLOG EVENTS
+    </kb/en/show-binlog-events/> statements executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_binlogs|
+
+  * *Description:* Number of SHOW BINARY LOGS </kb/en/show-binary-logs/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_charsets|
+
+  * *Description:* Number of SHOW CHARACTER SET
+    </kb/en/show-character-set/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_client_statistics|
+
+  * *Description:* Number of SHOW CLIENT STATISTICS
+    </kb/en/show-client_statistics/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.2 </kb/en/what-is-mariadb-52/>| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_collations|
+
+  * *Description:* Number of SHOW COLLATION </kb/en/show-collation/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_column_types|
+
+  * *Description:*
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Removed:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_contributors|
+
+  * *Description:* Number of SHOW CONTRIBUTORS
+    </kb/en/show-contributors/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_create_db|
+
+  * *Description:* Number of SHOW CREATE DATABASE
+    </kb/en/show-create-database/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_create_event|
+
+  * *Description:* Number of SHOW CREATE EVENT
+    </kb/en/show-create-event/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_create_func|
+
+  * *Description:* Number of SHOW CREATE FUNCTION
+    </kb/en/show-create-function/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_create_proc|
+
+  * *Description:* Number of SHOW CREATE PROCEDURE
+    </kb/en/show-create-procedure/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_create_table|
+
+  * *Description:* Number of SHOW CREATE TABLE
+    </kb/en/show-create-table/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_create_trigger|
+
+  * *Description:* Number of SHOW CREATE TRIGGER
+    </kb/en/show-create-table/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_databases|
+
+  * *Description:* Number of SHOW DATABASES </kb/en/show-databases/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_engine_logs|
+
+  * *Description:* Number of SHOW ENGINE LOGS </kb/en/show-engine/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_engine_mutex|
+
+  * *Description:* Number of SHOW ENGINE MUTEX </kb/en/show-engine/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_engine_status|
+
+  * *Description:* Number of SHOW ENGINE STATUS </kb/en/show-engine/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_events|
+
+  * *Description:* Number of SHOW EVENTS </kb/en/show-events/> commands
+    executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_errors|
+
+  * *Description:* Number of SHOW ERRORS </kb/en/show-errors/> commands
+    executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_explain|
+
+  * *Description:* Number of SHOW EXPLAIN </kb/en/show-explain/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 10.0 </kb/en/what-is-mariadb-100/>| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_fields|
+
+  * *Description:* Number of SHOW COLUMNS </kb/en/show-columns/> or SHOW
+    FIELDS commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_function_status|
+
+  * *Description:* Number of SHOW FUNCTION STATUS
+    </kb/en/show-function-status/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_grants|
+
+  * *Description:* Number of SHOW GRANTS </kb/en/show-grants/> commands
+    executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_keys|
+
+  * *Description:* Number of SHOW INDEX </kb/en/show-index/> or SHOW
+    KEYS commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_index_statistics|
+
+  * *Description:* Number of SHOW INDEX_STATISTICS
+    </kb/en/show-index_statistics/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.2 </kb/en/what-is-mariadb-52/>| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_open_tables|
+
+  * *Description:* Number of SHOW OPEN TABLES </kb/en/show-open-tables/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_plugins|
+
+  * *Description:* Number of SHOW PLUGINS </kb/en/show-plugins/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_privileges|
+
+  * *Description:* Number of SHOW PRIVILEGES </kb/en/show-privileges/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_procedure_status|
+
+  * *Description:* Number of SHOW PROCEDURE STATUS
+    </kb/en/show-procedure-status/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_processlist|
+
+  * *Description:* Number of SHOW PROCESSLIST </kb/en/show-processlist/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_profile|
+
+  * *Description:* Number of SHOW PROFILE </kb/en/show-profile/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_profiles|
+
+  * *Description:* Number of SHOW PROFILES </kb/en/show-profiles/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_relaylog_events|
+
+  * *Description:* Number of SHOW RELAYLOG EVENTS
+    </kb/en/show-relaylog-events/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_status|
+
+  * *Description:* Number of SHOW STATUS </kb/en/show-status/> commands
+    executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_storage_engines|
+
+  * *Description:* Number of SHOW STORAGE ENGINES </kb/en/show-engines/>
+    - or |SHOW ENGINES| - commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_table_statistics|
+
+  * *Description:* Number of SHOW TABLE STATISTICS
+    </kb/en/show-table_statistics/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_table_status|
+
+  * *Description:* Number of SHOW TABLE STATUS
+    </kb/en/show-table-status/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_tables|
+
+  * *Description:* Number of SHOW TABLES </kb/en/show-tables/> commands
+    executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_triggers|
+
+  * *Description:* Number of SHOW TRIGGERS </kb/en/show-triggers/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_user_statistics|
+
+  * *Description:* Number of SHOW USER STATISTICS
+    </kb/en/show-user_statistics/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_variable|
+
+  * *Description:* Number of SHOW VARIABLES </kb/en/show-variables/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_show_warnings|
+
+  * *Description:* Number of SHOW WARNINGS </kb/en/show-warnings/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_shutdown|
+
+  * *Description:* Number of SHUTDOWN </kb/en/shutdown/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_stmt_close|
+
+  * *Description:* Number of prepared statements
+    </kb/en/prepared-statements/> closed (deallocated or dropped
+    </kb/en/deallocate-drop-prepared-statement/>).
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_stmt_execute|
+
+  * *Description:* Number of prepared statements
+    </kb/en/prepared-statements/> executed </kb/en/execute-statement/>.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_stmt_fetch|
+
+  * *Description:* Number of prepared statements
+    </kb/en/prepared-statements/> fetched.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_stmt_prepare|
+
+  * *Description:* Number of prepared statements
+    </kb/en/prepared-statements/> prepared </kb/en/prepare-statement/>.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_stmt_reprepare|
+
+  * *Description:* Number of prepared statements
+    </kb/en/prepared-statements/> reprepared.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_stmt_reset|
+
+  * *Description:* Number of prepared statements
+    </kb/en/prepared-statements/> where the data of a prepared statement
+    which was accumulated in chunks by sending long data has been reset.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_stmt_send_long_data|
+
+  * *Description:* Number of prepared statements
+    </kb/en/prepared-statements/> where the parameter data has been sent
+    in chunks (long data).
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_truncate|
+
+  * *Description:* Number of TRUNCATE </kb/en/truncate/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_uninstall_plugin|
+
+  * *Description:* Number of UNINSTALL PLUGIN </kb/en/uninstall-plugin/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_unlock_tables|
+
+  * *Description:* Number of UNLOCK TABLES </kb/en/transactions-lock/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_update|
+
+  * *Description:* Number of UPDATE </kb/en/update/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_update_multi|
+
+  * *Description:* Number of multi-table UPDATE </kb/en/update/>
+    commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_xa_commit|
+
+  * *Description:* Number of XA statements committed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_xa_end|
+
+  * *Description:* Number of XA statements ended.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_xa_prepare|
+
+  * *Description:* Number of XA statements prepared.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_xa_recover|
+
+  * *Description:* Number of XA RECOVER statements executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_xa_rollback|
+
+  * *Description:* Number of XA statements rolled back.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Com_xa_start|
+
+  * *Description:* Number of XA statements started.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Compression|
+
+  * *Description:* Whether client-server traffic is compressed.
+  * *Scope:* Session
+  * *Data Type:* |boolean| 
+
+------------------------------------------------------------------------
+
+
+        |Connection_errors_accept|
+
+  * *Description:* Number of errors that occurred during calls to
+    accept() on the listening port.
+  * *Scope:* Global
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 10.0 </kb/en/what-is-mariadb-100/>| / |MySQL
+    5.6.5| 
+
+------------------------------------------------------------------------
+
+
+        |Connection_errors_internal|
+
+  * *Description:* Number of refused connections due to internal server
+    errors, for example out of memory errors, or failed thread starts.
+  * *Scope:* Global
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 10.0 </kb/en/what-is-mariadb-100/>| / |MySQL
+    5.6.5| 
+
+------------------------------------------------------------------------
+
+
+        |Connection_errors_max_connections|
+
+  * *Description:* Number of refused connections due to the
+    max_connections </kb/en/server-system-variables/#max_connections>
+    limit being reached.
+  * *Scope:* Global
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 10.0 </kb/en/what-is-mariadb-100/>| / |MySQL
+    5.6.5| 
+
+------------------------------------------------------------------------
+
+
+        |Connection_errors_peer_address|
+
+  * *Description:* Number of errors while searching for the connecting
+    client IP address.
+  * *Scope:* Global
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 10.0 </kb/en/what-is-mariadb-100/>| / |MySQL
+    5.6.5| 
+
+------------------------------------------------------------------------
+
+
+        |Connection_errors_select|
+
+  * *Description:* Number of errors during calls to select() or poll()
+    on the listening port. The client would not necessarily have been
+    rejected in these cases.
+  * *Scope:* Global
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 10.0 </kb/en/what-is-mariadb-100/>| / |MySQL
+    5.6.5| 
+
+------------------------------------------------------------------------
+
+
+        |Connection_errors_tcpwrap|
+
+  * *Description:* Number of connections the libwrap library refused.
+  * *Scope:* Global
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 10.0 </kb/en/what-is-mariadb-100/>| / |MySQL
+    5.6.5| 
+
+------------------------------------------------------------------------
+
+
+        |Connections|
+
+  * *Description:* Number of connection attempts (both successful and
+    unsuccessful)
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Cpu_time|
+
+  * *Description:* Total CPU time used.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.3 </kb/en/what-is-mariadb-53/>| 
+
+------------------------------------------------------------------------
+
+
+        |Created_tmp_disk_tables|
+
+  * *Description:* Number of on-disk temporary tables created.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Created_tmp_files|
+
+  * *Description:* Number of in-memory temporary tables created.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Created_tmp_tables|
+
+  * *Description:* Number of temporary tables created.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Delayed_errors|
+
+  * *Description:* Number of errors which occurred while doing INSERT
+    DELAYED </kb/en/insert-delayed/>.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Delayed_insert_threads|
+
+  * *Description:* Number of INSERT DELAYED </kb/en/insert-delayed/>
+    threads.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Delayed_writes|
+
+  * *Description:* Number of INSERT DELAYED </kb/en/insert-delayed/>
+    rows written..
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Empty_queries|
+
+  * *Description:* Number of queries returning no results. Note this is
+    not the same as Com_empty_query <#com_empty_query>.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.2 </kb/en/what-is-mariadb-52/>| 
+
+------------------------------------------------------------------------
+
+
+        |Executed_events|
+
+  * *Description:* Number of times events created with CREATE EVENT
+    </kb/en/create-event/> have executed. This differs from
+    Com_create_event <#com_create_event> in that it is only incremented
+    when the event has run, not when it executes.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5.28 </kb/en/mariadb-5528-release-notes/>| 
+
+------------------------------------------------------------------------
+
+
+        |Executed_triggers|
+
+  * *Description:* Number of times triggers created with CREATE TRIGGER
+    </kb/en/create-trigger/> have executed. This differs from
+    Com_create_trigger <#com_create_trigger> in that it is only
+    incremented when the trigger has run, not when it executes.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5.28 </kb/en/mariadb-5528-release-notes/>| 
+
+------------------------------------------------------------------------
+
+
+        |Feature_dynamic_columns|
+
+  * *Description:* Number of times the COLUMN_CREATE()
+    </kb/en/column_create/> function was used.
+  * *Scope:* Global
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Feature_fulltext|
+
+  * *Description:* Number of times the MATCH … AGAINST()
+    </kb/en/match-against/> function was used.
+  * *Scope:* Global
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Feature_gis|
+
+  * *Description:* Number of times a table with a any of the geometry
+    </kb/en/geometry-types/> columns was opened.
+  * *Scope:* Global
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Feature_locale|
+
+  * *Description:* Number of times the @@lc_messages
+    </kb/en/server-system-variables/#lc_messages> variable was assigned
+    into.
+  * *Scope:* Global
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Feature_subquery|
+
+  * *Description:* Number of subqueries (excluding subqueries in the
+    FROM clause) used.
+  * *Scope:* Global
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Feature_timezone|
+
+  * *Description:* Number of times an explicit timezone (excluding UTC
+    </kb/en/coordinated-universal-time/> and SYSTEM) was specified.
+  * *Scope:* Global
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Feature_trigger|
+
+  * *Description:* Number of triggers loaded.
+  * *Scope:* Global
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Feature_xml|
+
+  * *Description:* Number of times XML functions (EXTRACTVALUE()
+    </kb/en/extractvalue/> and UPDATEXML() </kb/en/updatexml/>) were used.
+  * *Scope:* Global
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Flush_commands|
+
+  * *Description:* Number of FLUSH </kb/en/flush/> statements executed,
+    as well as due to internal server flush requests. This differs from
+    Com_flush <#com_flush>, which simply counts FLUSH statements, not
+    internal server flush operations.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Handler_commit|
+
+  * *Description:* Number of internal COMMIT </kb/en/commit/> requests.
+    Differs from Com_commit <#com_commit>, which counts the number of
+    COMMIT </kb/en/commit/> statements executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Handler_delete|
+
+  * *Description:* Number of times rows have been deleted from tables.
+    Differs from Com_delete <#com_delete>, which counts DELETE
+    </kb/en/delete/> statements.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Handler_discover|
+
+  * *Description:* Discovery is when the server asks the NDBCLUSTER
+    storage engine if it knows about a table with a given name.
+    Handler_discover indicates the number of times that tables have been
+    discovered in this way.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Handler_external_lock|
+
+  * *Description:* Incremented for each call to the external_lock()
+    function, which generally occurs at the beginning and end of access
+    to a table instance.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 10.0 </kb/en/what-is-mariadb-100/>| 
+
+------------------------------------------------------------------------
+
+
+        |Handler_icp_attempts|
+
+  * *Description:* Number of times pushed index condition was checked.
+    The smaller the ratio of Handler_icp_attempts to Handler_icp_match
+    <#handler_icp_match> the better the filtering. See Index Condition
+    Pushdown </kb/en/index-condition-pushdown/>.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.3 </kb/en/what-is-mariadb-53/>| 
+
+------------------------------------------------------------------------
+
+
+        |Handler_icp_match|
+
+  * *Description:* Number of times pushed index condition was matched.
+    The smaller the ratio of Handler_icp_attempts
+    <#handler_icp_attempts> to Handler_icp_match the better the
+    filtering. See See Index Condition Pushdown
+    </kb/en/index-condition-pushdown/>.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.3 </kb/en/what-is-mariadb-53/>| 
+
+------------------------------------------------------------------------
+
+
+        |Handler_mrr_init|
+
+  * *Description:* Counts how many MRR (multi-range read) scans were
+    performed. See Multi Range Read optimization
+    </kb/en/multi-range-read-optimization/>.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.3 </kb/en/what-is-mariadb-53/>| 
+
+------------------------------------------------------------------------
+
+
+        |Handler_mrr_key_refills|
+
+  * *Description:* Number of times key buffer was refilled (not counting
+    the initial fill). A non-zero value indicates there wasn't enough
+    memory to do key sort-and-sweep passes in one go. See Multi Range
+    Read optimization </kb/en/multi-range-read-optimization/>.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.3 </kb/en/what-is-mariadb-53/>| 
+
+------------------------------------------------------------------------
+
+
+        |Handler_mrr_rowid_refills|
+
+  * *Description:* Number of times rowid buffer was refilled (not
+    counting the initial fill). A non-zero value indicates there wasn't
+    enough memory to do rowid sort-and-sweep passes in one go. See Multi
+    Range Read optimization </kb/en/multi-range-read-optimization/>.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.3 </kb/en/what-is-mariadb-53/>| 
+
+------------------------------------------------------------------------
+
+
+        |Handler_prepare|
+
+  * *Description:* Number of two-phase commit prepares.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Handler_read_first|
+
+  * *Description:* Number of requests to read the first row from an
+    index. A high value indicates many full index scans, e.g. |SELECT a
+    FROM table_name| where |a| is an indexed column.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Handler_read_key|
+
+  * *Description:* Number of row read requests based on an index value.
+    A high value indicates indexes are regularly being used, which is
+    usually positive.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Handler_read_last|
+
+  * *Description:* Number of requests to read the last row from an
+    index. ORDER BY DESC </kb/en/select/#order-by> results in a last-key
+    request followed by several previous-key requests.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Handler_read_next|
+
+  * *Description:* Number of requests to read the next row from an index
+    (in order). Increments when doing an index scan or querying an index
+    column with a range constraint.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Handler_read_prev|
+
+  * *Description:* Number of requests to read the previous row from an
+    index (in order). Mostly used with ORDER BY DESC
+    </kb/en/select/#order-by>.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Handler_read_rnd|
+
+  * *Description:* Number of requests to read a row based on its
+    position. If this value is high, you may not be using joins that
+    don't use indexes properly, or be doing many full table scans.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Handler_read_rnd_deleted|
+
+  * *Description:* Number of requests to delete a row based on its
+    position.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.3 </kb/en/what-is-mariadb-53/>| 
+
+------------------------------------------------------------------------
+
+
+        |Handler_read_rnd_next|
+
+  * *Description:* Number of requests to read the next row. A large
+    number of these may indicate many table scans and improperly used
+    indexes.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Handler_rollback|
+
+  * *Description:* Number of transaction rollback requests given to a
+    storage engine. Differs from Com_rollback <#com_rollback>, which is
+    the number of ROLLBACK </kb/en/rollback/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Handler_savepoint|
+
+  * *Description:* Number of transaction savepoint creation requests.
+    Differs from Com_savepoint <#com_savepoint> which is the number of
+    SAVEPOINT </kb/en/savepoint/> commands executed.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Handler_savepoint_rollback|
+
+  * *Description:* Number of requests to rollback to a transaction
+    savepoint </kb/en/savepoint/>.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Handler_tmp_update|
+
+  * *Description:* Number of requests to update a row to a temporary table.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.3 </kb/en/what-is-mariadb-53/>| 
+
+------------------------------------------------------------------------
+
+
+        |Handler_tmp_write|
+
+  * *Description:* Number of requests to write a row to a temporary table.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.3 </kb/en/what-is-mariadb-53/>| 
+
+------------------------------------------------------------------------
+
+
+        |Handler_update|
+
+  * *Description:* Number of requests to update a row in a table. Since
+    MariaDB 5.3 </kb/en/what-is-mariadb-53/>, this no longer counts
+    temporary tables - see Handler_tmp_update <#handler_tmp_update>.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Handler_write|
+
+  * *Description:* Number of requests to write a row to a table. Since
+    MariaDB 5.3 </kb/en/what-is-mariadb-53/>, this no longer counts
+    temporary tables - see Handler_tmp_write <#handler_tmp_write>.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Key_blocks_not_flushed|
+
+  * *Description:* Number of key cache blocks which have been modified
+    but not flushed to disk.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Key_blocks_unused|
+
+  * *Description:* Number of unused key cache blocks.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Key_blocks_used|
+
+  * *Description:* Max number of key cache blocks which have been used
+    simultaneously.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Key_blocks_warm|
+
+  * *Description:* Number of key cache blocks in the warm list.
+  * *Scope:* Global
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.1 </kb/en/what-is-mariadb-51/>| 
+
+------------------------------------------------------------------------
+
+
+        |Key_read_requests|
+
+  * *Description:* Number of key cache block read requests. See
+    Optimizing key_buffer_size </kb/en/optimizing-key_buffer_size/>.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Key_reads|
+
+  * *Description:* Number of physical index block reads. See Optimizing
+    key_buffer_size </kb/en/optimizing-key_buffer_size/>.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Key_write_requests|
+
+  * *Description:* Number of requests to write a block to the key cache.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Key_writes|
+
+  * *Description:* Number of key cache block write requests
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Last_query_cost|
+
+  * *Description:* The most recent query optimizer query cost
+    calculation. Can not be calculated for complex queries, such as
+    subqueries or UNION. It will be set to 0 for complex queries.
+  * *Scope:* Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Maria_*|
+
+  * *Description:* When the Maria storage engine was renamed Aria, the
+    Maria variables existing at the time were renamed at the same time.
+    See Aria Server Status Variables
+    </kb/en/aria-server-status-variables/>. 
+
+------------------------------------------------------------------------
+
+
+        |Max_used_connections|
+
+  * *Description:* Max number of connections ever open at the same time.
+  * *Scope:* Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Memory_used|
+
+  * *Description:* Global or per-connection memory usage.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 10.0.1 </kb/en/mariadb-1001-release-notes/>| 
+
+------------------------------------------------------------------------
+
+
+        |Not_flushed_delayed_rows|
+
+  * *Description:* Number of INSERT DELAYED </kb/en/insert-delayed/>
+    rows waiting to be written.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Open_files|
+
+  * *Description:* Number of regular files currently opened by the
+    server. Does not include sockets or pipes, or storage engines using
+    internal functions.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Open_streams|
+
+  * *Description:* Number of currently opened streams, usually log files.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Open_table_definitions|
+
+  * *Description:* Number of currently cached .frm files.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Open_tables|
+
+  * *Description:* Number of currently opened tables, excluding
+    temporary tables.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Opened_files|
+
+  * *Description:* Number of files the server has opened.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Opened_table_definitions|
+
+  * *Description:* Number of .frm files that have been cached.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Opened_tables|
+
+  * *Description:* Number of tables the server has opened.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Opened_views|
+
+  * *Description:* Number of views the server has opened.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Oqgraph_boost_version|
+
+  * *Description:* OQGRAPH </kb/en/oqgraph/> boost version.
+  * *Scope:* Global, Session
+  * *Data Type:* |string|
+  * *Introduced:* |MariaDB 10.0.7 </kb/en/mariadb-1007-release-notes/>|
+    with the OQGRAPH </kb/en/oqgraph/> storage engine. 
+
+------------------------------------------------------------------------
+
+
+        |Performance_schema_accounts_lost|
+
+  * *Description:* Number of times a row could not be added to the
+    performance schema accounts table due to it being full.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 10.0 </kb/en/what-is-mariadb-100/>| 
+
+------------------------------------------------------------------------
+
+
+        |Performance_schema_cond_classes_lost|
+
+  * *Description:* Number of condition instruments that could not be
+    loaded.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Performance_schema_cond_instances_lost|
+
+  * *Description:* Number of instances a condition object could not be
+    created.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Performance_schema_digest_lost|
+
+  * *Description:*
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Performance_schema_file_classes_lost|
+
+  * *Description:* Number of file instruments that could not be loaded.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Performance_schema_file_handles_lost|
+
+  * *Description:* Number of instances a file object could not be opened.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Performance_schema_file_instances_lost|
+
+  * *Description:* Number of instances a file object could not be created.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Performance_schema_hosts_lost|
+
+  * *Description:* Number of times a row could not be added to the
+    performance schema hosts table due to it being full.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 10.0 </kb/en/what-is-mariadb-100/>| 
+
+------------------------------------------------------------------------
+
+
+        |Performance_schema_locker_lost|
+
+  * *Description:* Number of events not recorded, due to either being
+    recursive, or having a deeper nested events stack than the
+    implementation limit.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Performance_schema_mutex_classes_lost|
+
+  * *Description:* Number of mutual exclusion instruments that could not
+    be loaded.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Performance_schema_mutex_instances_lost|
+
+  * *Description:* Number of instances a mutual exclusion object could
+    not be created.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Performance_schema_rwlock_classes_lost|
+
+  * *Description:* Number of read/write lock instruments that could not
+    be loaded.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Performance_schema_rwlock_instances_lost|
+
+  * *Description:* Number of instances a read/write lock object could
+    not be created.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Performance_schema_socket_classes_lost|
+
+  * *Description:*
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 10.0 </kb/en/what-is-mariadb-100/>| 
+
+------------------------------------------------------------------------
+
+
+        |Performance_schema_socket_instances_lost|
+
+  * *Description:* Number of instances a socket object could not be
+    created.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 10.0 </kb/en/what-is-mariadb-100/>| 
+
+------------------------------------------------------------------------
+
+
+        |Performance_schema_stage_classes_lost|
+
+  * *Description:* Number of stage event instruments that could not be
+    loaded.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 10.0 </kb/en/what-is-mariadb-100/>| 
+
+------------------------------------------------------------------------
+
+
+        |Performance_schema_statement_classes_lost|
+
+  * *Description:* Number of statement instruments that could not be
+    loaded.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 10.0 </kb/en/what-is-mariadb-100/>| 
+
+------------------------------------------------------------------------
+
+
+        |Performance_schema_table_handles_lost|
+
+  * *Description:* Number of instances a table object could not be opened.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Performance_schema_table_instances_lost|
+
+  * *Description:* Number of instances a table object could not be created.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Performance_schema_thread_classes_lost|
+
+  * *Description:* Number of thread instruments that could not be loaded.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Performance_schema_thread_instances_lost|
+
+  * *Description:* Number of instances thread object could not be created.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Performance_schema_users_lost|
+
+  * *Description:* Number of times a row could not be added to the
+    performance schema users table due to it being full.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Prepared_stmt_count|
+
+  * *Description:* Current number of prepared statements.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Qcache_free_blocks|
+
+  * *Description:* Number of free query cache </kb/en/query-cache/>
+    memory blocks.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Qcache_free_blocks|
+
+  * *Description:* Number of free query cache </kb/en/query-cache/>
+    memory blocks.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Qcache_free_memory|
+
+  * *Description:* Amount of free query cache </kb/en/query-cache/> memory.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Qcache_hits|
+
+  * *Description:* Number of requests served by the query cache
+    </kb/en/query-cache/>.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Qcache_inserts|
+
+  * *Description:* Number of queries ever cached in the query cache
+    </kb/en/query-cache/>.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Qcache_lowmem_prunes|
+
+  * *Description:* Number of pruning operations performed to remove old
+    results to make space for new results in the query cache
+    </kb/en/query-cache/>.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Qcache_not_cached|
+
+  * *Description:* Number of queries that are uncacheable by the query
+    cache </kb/en/query-cache/>, or use SQL_NO_CACHE.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Qcache_queries_in_cache|
+
+  * *Description:* Number of queries currently cached by the query cache
+    </kb/en/query-cache/>.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Qcache_total_blocks|
+
+  * *Description:* Number of blocks used by the query cache
+    </kb/en/query-cache/>.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Queries|
+
+  * *Description:* Number of statements executed by the server,
+    excluding COM_PING and COM_STATISTICS. Differs from Questions
+    <#questions> in that it also counts statements executed within
+    stored programs </kb/en/stored-programs-and-views/>.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Questions|
+
+  * *Description:* Number of statements executed by the server,
+    excluding COM_PING, COM_STATISTICS, COM_STMT_PREPARE,
+    COM_STMT_CLOSE, and COM_STMT_RESET statements. Differs from Queries
+    <#queries> in that it doesn't count statements executed within
+    stored programs </kb/en/stored-programs-and-views/>.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Rows_read|
+
+  * *Description:* Number of requests to read a row (excluding temporary
+    tables).
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.3 </kb/en/what-is-mariadb-53/>| 
+
+------------------------------------------------------------------------
+
+
+        |Rows_sent|
+
+  * *Description:*
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.3 </kb/en/what-is-mariadb-53/>| 
+
+------------------------------------------------------------------------
+
+
+        |Rows_tmp_read|
+
+  * *Description:* Number of requests to read a row in a temporary table.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.3 </kb/en/what-is-mariadb-53/>| 
+
+------------------------------------------------------------------------
+
+
+        |Rpl_recovery_rank|
+
+  * *Description:* Unused 
+
+------------------------------------------------------------------------
+
+
+        |Select_full_join|
+
+  * *Description:* Number of joins which did not use an index. If not
+    zero, you may need to check table indexes.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Select_full_range_join|
+
+  * *Description:* Number of joins which used a range search of the
+    first table.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Select_range|
+
+  * *Description:* Number of joins which used a range on the first table.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Select_range_check|
+
+  * *Description:* Number of joins without keys that check for key usage
+    after each row. If not zero, you may need to check table indexes.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Select_scan|
+
+  * *Description:* Number of joins which used a full scan of the first
+    table.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Slow_launch_threads|
+
+  * *Description:* Number of threads which took longer than
+    slow_launch_time </kb/en/server-system-variables/#slow_launch_time>
+    to create.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Slow_queries|
+
+  * *Description:* Number of queries which took longer than
+    long_query_time </kb/en/server-system-variables/#long_query_time> to
+    run. The slow query log </kb/en/slow-query-log/> does not need to be
+    active for this to be recorded.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Sort_merge_passes|
+
+  * *Description:* Number of merge passes performed by the sort
+    algorithm. If too high, you may need to increase the
+    sort_buffer_size </kb/en/server-system-variables/#sort_buffer_size>.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Sort_range|
+
+  * *Description:* Number of sorts which used a range.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Sort_rows|
+
+  * *Description:* Number of rows sorted.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Sort_scan|
+
+  * *Description:* Number of sorts which used a full table scan.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Sphinx_error|
+
+  * *Description:* See SHOW ENGINE SPHINX STATUS
+    </kb/en/about-sphinxse/#show-engine-sphinx-status>.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Sphinx_time|
+
+  * *Description:* See SHOW ENGINE SPHINX STATUS
+    </kb/en/about-sphinxse/#show-engine-sphinx-status>.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Sphinx_total|
+
+  * *Description:* See SHOW ENGINE SPHINX STATUS
+    </kb/en/about-sphinxse/#show-engine-sphinx-status>.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Sphinx_total_found|
+
+  * *Description:* See SHOW ENGINE SPHINX STATUS
+    </kb/en/about-sphinxse/#show-engine-sphinx-status>.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Sphinx_word_count|
+
+  * *Description:* See SHOW ENGINE SPHINX STATUS
+    </kb/en/about-sphinxse/#show-engine-sphinx-status>.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Sphinx_words|
+
+  * *Description:* See SHOW ENGINE SPHINX STATUS
+    </kb/en/about-sphinxse/#show-engine-sphinx-status>.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Ssl_accept_renegotiates|
+
+  * *Description:* Number of negotiates needed to establish the SSL
+    connection.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Ssl_accepts|
+
+  * *Description:* Number of accepted SSL/TLS handshakes.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Ssl_callback_cache_hits|
+
+  * *Description:* Number of sessions retrieved from session cache.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Ssl_cipher|
+
+  * *Description:* SSL cipher in use.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Ssl_cipher_list|
+
+  * *Description:* List of available SSL ciphers.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Ssl_client_connects|
+
+  * *Description:* Number of SSL/TLS handshakes started in client mode.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Ssl_connect_renegotiates|
+
+  * *Description:* Number of negotiates needed to establish the
+    connection to an SSL-enabled master.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Ssl_ctx_verify_depth|
+
+  * *Description:* How many SSL certificates in the chain are tested.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Ssl_ctx_verify_mode|
+
+  * *Description:* SSL context verification mode.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Ssl_default_timeout|
+
+  * *Description:* SSL default timeout, in seconds.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Ssl_finished_accepts|
+
+  * *Description:* Number of successful SSL/TLS sessions in server mode.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Ssl_finished_connects|
+
+  * *Description:* Number of successful SSL/TLS sessions in client mode.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Ssl_server_not_after|
+
+  * *Description:* Last valid date for the SSL certificate.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 10.0 </kb/en/what-is-mariadb-100/>| 
+
+------------------------------------------------------------------------
+
+
+        |Ssl_server_not_after|
+
+  * *Description:* First valid date for the SSL certificate.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 10.0 </kb/en/what-is-mariadb-100/>| 
+
+------------------------------------------------------------------------
+
+
+        |Ssl_session_cache_hits|
+
+  * *Description:* Number of SSL sessions found in the session cache.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Ssl_session_cache_misses|
+
+  * *Description:* Number of SSL sessions not found in the session cache.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Ssl_session_cache_mode|
+
+  * *Description:* Mode used for SSL caching by the server.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Ssl_session_cache_overflows|
+
+  * *Description:* Number of sessions removed from the session cache
+    because it was full.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Ssl_session_cache_size|
+
+  * *Description:* Size of the session cache.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Ssl_session_cache_timeouts|
+
+  * *Description:* Number of sessions which have timed out.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Ssl_sessions_reused|
+
+  * *Description:* Number of sessions reused.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Ssl_used_session_cache_entries|
+
+  * *Description:* Current number of sessions in the session cache.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Ssl_verify_depth|
+
+  * *Description:* SSL verification depth.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Ssl_verify_mode|
+
+  * *Description:* SSL verification mode.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Ssl_version|
+
+  * *Description:* SSL version in use.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Subquery_cache_hit|
+
+  * *Description:* Counter for all subquery cache
+    </kb/en/subquery-cache/> hits
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.3 </kb/en/what-is-mariadb-53/>| 
+
+------------------------------------------------------------------------
+
+
+        |Subquery_cache_miss|
+
+  * *Description:* Counter for all subquery cache
+    </kb/en/subquery-cache/> misses
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.3 </kb/en/what-is-mariadb-53/>| 
+
+------------------------------------------------------------------------
+
+
+        |Syncs|
+
+  * *Description:* Number of times my_sync() has been called, or the
+    number of times the server has had to force data to disk. Covers the
+    binary log </kb/en/binary-log/>, .frm creation (if these operations
+    are configured to sync) and some storage engines (Archive
+    </kb/en/archive/>, CSV </kb/en/csv/>, Aria </kb/en/aria/>), but not
+    XtraDB/InnoDB </kb/en/innodb/>).
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.1 </kb/en/what-is-mariadb-51/>| 
+
+------------------------------------------------------------------------
+
+
+        |Table_locks_immediate|
+
+  * *Description:* Number of table locks which were completed immediately.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Table_locks_waited|
+
+  * *Description:* Number of table locks which had to wait. Indicates
+    table lock contention.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Tc_log_max_pages_used|
+
+  * *Description:* Max number of pages used by the transaction
+    coordinator recovery log.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Tc_log_page_size|
+
+  * *Description:* Page size of the transaction coordinator recovery log.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Tc_log_page_waits|
+
+  * *Description:* Number of times a two-phase commit was forced to wait
+    for a free transaction coordinator recovery log page.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Threadpool_idle_threads|
+
+  * *Description:* Number of inactive threads in the thread pool
+    </kb/en/threadpool-in-55/>. Only meaningful on Unixes, not tracked
+    on Windows. Threads become idle either by waiting for new work, or
+    if it's blocked due to disk io, row or table lock etc.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Threadpool_threads|
+
+  * *Description:* Number of threads in the thread pool
+    </kb/en/threadpool-in-55/>.
+  * *Scope:* Global, Session
+  * *Data Type:* |numeric|
+  * *Introduced:* |MariaDB 5.5 </kb/en/what-is-mariadb-55/>| 
+
+------------------------------------------------------------------------
+
+
+        |Threads_cached|
+
+  * *Description:* Number of threads cached in the thread cache.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Threads_connected|
+
+  * *Description:* Number of open connections.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Threads_created|
+
+  * *Description:* Number of threads created to respond to client
+    connections. If too large, look at increasing thread_cache_size
+    </kb/en/server-system-variables/#thread_cache_size>.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Threads_running|
+
+  * *Description:* Number of threads that are actively running, not
+    sleeping.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Uptime|
+
+  * *Description:* Number of seconds the server has been running.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
+------------------------------------------------------------------------
+
+
+        |Uptime_since_flush_status|
+
+  * *Description:* Number of seconds since the last FLUSH STATUS
+    </kb/en/flush/>.
+  * *Scope:* Global
+  * *Data Type:* |numeric| 
+
